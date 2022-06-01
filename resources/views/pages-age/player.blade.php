@@ -1,10 +1,341 @@
 @extends('layouts.app')
 
+@section('css')
+    <link type="text/css" href="{{ asset('assets') }}/css/extrastyles.css" rel="stylesheet">
+
+@endsection
 @section('content')
 
 <div class="container">
     
-    @foreach ($response1 as $item)
+   {{--  @foreach ($response1 as $item) --}}
+
+    <div class="table-responsive">
+        <table id="matches-history" class="table align-items-center table-dark">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Result(?</th>
+                <th scope="col">Civ</th>
+                <th scope="col">Rating</th>
+{{--                 <th scope="col">Enemy's civ</th>
+                <th scope="col">Rating's oponent</th>
+                <th scope="col">Nacionality</th>
+                <th scope="col">Name</th> --}}
+                <th scope="col">Map</th>
+{{--                 <th scope="col">Duration</th>
+                <th scope="col">Download rec</th>   --}}
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($response1 as $item)
+                    @foreach ($item["players"] as $players)
+                    <tr>
+                        @if (is_null($players['won']))
+                            <td>Custom game</td>
+                        @elseif($players['won'] == false)
+                            <td style="color:red">Lose</td>
+                        @elseif($players['won'] == true)
+                            <td style="color:green">Won</td>
+                        @endif
+                        {{-- <td>{{ $players['won'] }}</td> --}}
+                        <td>{{ $players['civ'] }}</td>
+                        <td>{{ $players['rating'] }}</td>
+                        <td>{{ $players['name'] }}</td>
+                        @if ($item['map_type'] == 9)
+                            <td>Arabia </td>
+                        @elseif($item['map_type'] == 10)
+                            <td> Archipelago</td>
+                        @elseif($item['map_type'] == 11)
+                            <td> Baltic</td>
+                        @elseif($item['map_type'] == 12)
+                            <td> Black Forest</td>
+                        @elseif($item['map_type'] == 13)
+                            <td> Coastal</td>
+                        @elseif($item['map_type'] == 14)
+                            <td> Continental</td>
+                        @elseif($item['map_type'] == 15)
+                            <td> Crater Lake</td>
+                        @elseif($item['map_type'] == 16)
+                            <td> Fortress</td>
+                        @elseif($item['map_type'] == 17)
+                            <td> Gold Rush</td>
+                        @elseif($item['map_type'] == 18)
+                            <td> Highland</td>
+                        @elseif($item['map_type'] == 19)
+                            <td> Islands</td>
+                        @elseif($item['map_type'] == 20)
+                            <td> Mediterranean</td>
+                        @elseif($item['map_type'] == 21)
+                            <td> Migration</td>
+                        @elseif($item['map_type'] == 22)
+                            <td> Rivers </td>
+                        @elseif($item['map_type'] == 23)
+                            <td> Team Islands </td>
+                        @elseif($item['map_type'] == 24)
+                            <td> Full Random       </td>
+                        @elseif($item['map_type'] == 25)
+                            <td> Scandinavia</td>
+                        @elseif($item['map_type'] == 26)
+                            <td> Mongolia        </td>  
+                        @elseif($item['map_type'] == 27)
+                            <td> Yucatan  </td>
+                        @elseif($item['map_type'] == 28)
+                            <td> Salt Marsh  </td>
+                        @elseif($item['map_type'] == 29)
+                            <td> Arena  </td>
+                        @elseif($item['map_type'] == 31)
+                            <td> Oasis</td>
+                        @elseif($item['map_type'] == 32)
+                            <td> Ghost Lake</td>
+                        @elseif($item['map_type'] == 33)
+                            <td> Nomad</td>
+                        @elseif($item['map_type'] == 49)
+                            <td> Iberia</td>
+                        @elseif($item['map_type'] == 50)
+                            <td> Britain</td>
+                        @elseif($item['map_type'] == 51)
+                            <td> Mideast</td>
+                        @elseif($item['map_type'] == 52)
+                            <td> Texas</td>
+                        @elseif($item['map_type'] == 53)
+                            <td> Italy</td>
+                        @elseif($item['map_type'] == 54)
+                            <td> Central America
+                        @elseif($item['map_type'] == 55)
+                            <td> France</td>
+                        @elseif($item['map_type'] == 56)
+                            <td> Norse Lands</td>
+                        @elseif($item['map_type'] == 57)
+                            <td> Sea Of Japan </td>
+                        @elseif($item['map_type'] == 58)
+                            <td> Byzantium</td>
+                        @elseif($item['map_type'] == 59)
+                            <td> Custom</td>
+                        @elseif($item['map_type'] == 60)
+                            <td> Random Land <td>
+                        @elseif($item['map_type'] == 62)
+                            <td> Random Real World <td>
+                        @elseif($item['map_type'] == 63)
+                            <td> Blind Random</td>
+                        @elseif($item['map_type'] == 65)
+                            <td> Random Special <td>
+                        @elseif($item['map_type'] == 66)
+                            <td> Random Special <td>
+                        @elseif($item['map_type'] == 67)
+                            <td> Acropolis</td>
+                        @elseif($item['map_type'] == 68)
+                            <td> Budapest</td>
+                        @elseif($item['map_type'] == 69)
+                            <td> Cenotes</td>
+                        @elseif($item['map_type'] == 70)
+                            <td> City of Lakes</td>
+                        @elseif($item['map_type'] == 71)
+                            <td> Golden Pit</td>
+                        @elseif($item['map_type'] == 72)
+                            <td> Hideout</td>
+                        @elseif($item['map_type'] == 73)
+                            <td> Hill Fort</td>
+                        @elseif($item['map_type'] == 74)
+                            <td> Lombardia</td>
+                        @elseif($item['map_type'] == 75)
+                            <td> Steppe</td>
+                        @elseif($item['map_type'] == 76)
+                            <td> Valley</td>
+                        @elseif($item['map_type'] == 77)
+                            <td> MegaRandom</td>
+                        @elseif($item['map_type'] == 78)
+                            <td> Hamburger</td>
+                        @elseif($item['map_type'] == 79)
+                            <td> CtR Random</td>
+                        @elseif($item['map_type'] == 80)
+                            <td> CtR Monsoon</td>
+                        @elseif($item['map_type'] == 81)
+                            <td> CtR Pyramid Descent</td>
+                        @elseif($item['map_type'] == 82)
+                            <td> CtR Spiral</td>
+                        @elseif($item['map_type'] == 83)
+                            <td> CtR Kilimanjaro</td>
+                        @elseif($item['map_type'] == 84)
+                            <td> CtR Mountain Pass</td>
+                        @elseif($item['map_type'] == 85)
+                            <td> Nile Delta</td>
+                        @elseif($item['map_type'] == 86)
+                            <td> Serengeti</td>
+                        @elseif($item['map_type'] == 87)
+                            <td> Socotra</td>
+                        @elseif($item['map_type'] == 88)
+                            <td> Amazon</td>
+                        @elseif($item['map_type'] == 89)
+                            <td> China</td>
+                        @elseif($item['map_type'] == 90)
+                            <td> Horn of Africa</td>
+                        @elseif($item['map_type'] == 91)
+                            <td> India</td>
+                        @elseif($item['map_type'] == 92)
+                            <td> Madagascar</td>
+                        @elseif($item['map_type'] == 93)
+                            <td> West Africa</td>
+                        @elseif($item['map_type'] == 94)
+                            <td> Bohemia</td>
+                        @elseif($item['map_type'] == 95)
+                            <td>Earth</td>
+                        @elseif($item['map_type'] == 96)
+                            <td>Canyons</td>
+                        @elseif($item['map_type'] == 97)
+                            <td>Enemy Archipelago</td>
+                        @elseif($item['map_type'] == 98)
+                            <td>Enemy Islands</td>
+                        @elseif($item['map_type'] == 99)
+                            <td>Far Out</td>
+                        @elseif($item['map_type'] == 100)
+                            <td>Front Line</td>
+                        @elseif($item['map_type'] == 101)
+                            <td>Inner Circle</td>
+                        @elseif($item['map_type'] == 102)
+                            <td>Motherland</td>
+                        @elseif($item['map_type'] == 103)
+                            <td>Open Plains</td>
+                        @elseif($item['map_type'] == 104)
+                            <td>Ring of Water</td>
+                        @elseif($item['map_type'] == 105)
+                            <td>Snakepit</td>
+                        @elseif($item['map_type'] == 106)
+                            <td>The Eye</td>
+                        @elseif($item['map_type'] == 107)
+                            <td>Australia</td>
+                        @elseif($item['map_type'] == 108)
+                            <td>Indochina</td>
+                        @elseif($item['map_type'] == 109)
+                            <td>Indonesia</td>
+                        @elseif($item['map_type'] == 110)
+                            <td>Strait of Malacca</td>
+                        @elseif($item['map_type'] == 111)
+                            <td>Philippines</td>
+                        @elseif($item['map_type'] == 112)
+                            <td>Bog Islands</td>
+                        @elseif($item['map_type'] == 113)
+                            <td>Mangrove Jungle</td>
+                        @elseif($item['map_type'] == 114)
+                            <td>Pacific Islands</td>
+                        @elseif($item['map_type'] == 115)
+                            <td>Sandbank</td>
+                        @elseif($item['map_type'] == 116)
+                            <td>Water Nomad</td>
+                        @elseif($item['map_type'] == 117)
+                            <td>Jungle Islands</td>
+                        @elseif($item['map_type'] == 118)
+                            <td>Holy Line</td>
+                        @elseif($item['map_type'] == 119)
+                            <td>Border Stones</td>
+                        @elseif($item['map_type'] == 120)
+                            <td>Yin Yang</td>
+                        @elseif($item['map_type'] == 121)
+                            <td>Jungle Lanes</td>
+                        @elseif($item['map_type'] == 122)
+                            <td>Alpine Lakes</td>
+                        @elseif($item['map_type'] == 123)
+                            <td>Bogland</td>
+                        @elseif($item['map_type'] == 124)
+                            <td>Mountain Ridge</td>
+                        @elseif($item['map_type'] == 125)
+                            <td>Ravines</td>
+                        @elseif($item['map_type'] == 126)
+                            <td>Wolf Hill</td>
+                        @elseif($item['map_type'] == 132)
+                            <td>Antarctica</td>
+                        @elseif($item['map_type'] == 133)
+                            <td>Aral Sea</td>
+                        @elseif($item['map_type'] == 134)
+                            <td>Black Sea</td>
+                        @elseif($item['map_type'] == 135)
+                            <td>Caucasus</td>
+                        @elseif($item['map_type'] == 136)
+                            <td>Caucasus</td>
+                        @elseif($item['map_type'] == 137)
+                            <td>Custom Map Pool</td>
+                        @elseif($item['map_type'] == 138)
+                            <td>Custom Map Pool</td>
+                        @elseif($item['map_type'] == 139)
+                            <td>Golden Swamp</td>
+                        @elseif($item['map_type'] == 140)
+                            <td>Four Lakes</td>
+                        @elseif($item['map_type'] == 141)
+                            <td>Land Nomad</td>
+                        @elseif($item['map_type'] == 142)
+                            <td>BR Battle On Ice</td>
+                        @elseif($item['map_type'] == 143)
+                            <td>BR El Dorado"</td>
+                        @elseif($item['map_type'] == 144)
+                            <td>BR Fall of Axum"</td>
+                        @elseif($item['map_type'] == 145)
+                            <td>BR Fall of Rome</td>
+                        @elseif($item['map_type'] == 146)
+                            <td>BR Majapahit Empire</td>
+                        @elseif($item['map_type'] == 147)
+                            <td>Amazon Tunnel</td>
+                        @elseif($item['map_type'] == 148)
+                            <td>Coastal Forest</td>
+                        @elseif($item['map_type'] == 149)
+                            <td>African Clearing</td>
+                        @elseif($item['map_type'] == 150)
+                            <td>Atacama</td>
+                        @elseif($item['map_type'] == 151)
+                            <td>Seize the Mountain</td>
+                        @elseif($item['map_type'] == 152)
+                            <td>Crater</td>
+                        @elseif($item['map_type'] == 153)
+                            <td>Crossroads</td>
+                        @elseif($item['map_type'] == 154)
+                            <td>Michi</td>
+                        @elseif($item['map_type'] == 155)
+                            <td>Team Moats</td>
+                        @elseif($item['map_type'] == 156)
+                            <td>Volcanic Island</td>
+                        @elseif($item['map_type'] == 157)
+                            <td>Acclivity</td>
+                        @elseif($item['map_type'] == 158)
+                            <td>Eruption</td>
+                        @elseif($item['map_type'] == 159)
+                            <td>Frigid Lake</td>
+                        @elseif($item['map_type'] == 160)
+                            <td>Greenland</td>
+                        @elseif($item['map_type'] == 161)
+                            <td>Lowland</td>
+                        @elseif($item['map_type'] == 162)
+                            <td>Marketplace</td>
+                        @elseif($item['map_type'] == 163)
+                            <td>Meadow</td>
+                        @elseif($item['map_type'] == 164)
+                            <td>Mountain Range</td>
+                        @elseif($item['map_type'] == 165)
+                            <td>Northern Isles</td>
+                        @elseif($item['map_type'] == 166)
+                            <td>Ring Fortress</td>
+                        @elseif($item['map_type'] == 167)
+                            <td>Runestones</td>
+                        @elseif($item['map_type'] == 168)
+                            <td>Aftermath</td>
+                        @elseif($item['map_type'] == 169)
+                            <td>Enclosed</td>
+                        @elseif($item['map_type'] == 170)
+                            <td>Haboob</td>
+                        @elseif($item['map_type'] == 171)
+                            <td>Kawasan</td>
+                        @elseif($item['map_type'] == 172)
+                            <td>Land Madness</td>
+                        @elseif($item['map_type'] == 173)
+                            <td>Sacred Springs</td>
+                        @elseif($item['map_type'] == 174)
+                            <td>Wade</td>
+                        @endif
+                       
+                    </tr>
+                    @endforeach
+                @endforeach
+
+        </tbody>
+        </table>
+    </div>        
         <div class="card">
 
 
@@ -12,7 +343,6 @@
                 Game Number: {{$item["match_id"]}}  
             </div>
             <div class="card-body">
-                @foreach ($item["players"] as $players)
                 
                {{--  {{ $all_players = count($players['profile_id'])}} --}}
                 {{ $players['profile_id']}}
@@ -36,151 +366,13 @@
                 @endif --}}
 {{--                     {{ $players['profile_id'] }}
                     {{ $players[''] }} --}}
-                @endforeach
+                
                 <p>
-                    @if ($item['map_type'] == 9)
-                        Map : Arabia
-                    @elseif($item['map_type'] == 10)
-                        Map: Archipelago
-                    @elseif($item['map_type'] == 11)
-                        Map: Baltic
-                    @elseif($item['map_type'] == 12)
-                        Map: Black Forest
-                    @elseif($item['map_type'] == 13)
-                        Map: Coastal
-                    @elseif($item['map_type'] == 14)
-                        Map: Continental
-                    @elseif($item['map_type'] == 15)
-                        Map: Crater Lake
-                    @elseif($item['map_type'] == 16)
-                        Map: Fortress
-                    @elseif($item['map_type'] == 17)
-                        Map: Gold Rush
-                    @elseif($item['map_type'] == 18)
-                        Map: Highland
-                    @elseif($item['map_type'] == 19)
-                        Map: Islands
-                    @elseif($item['map_type'] == 20)
-                        Map: Mediterranean
-                    @elseif($item['map_type'] == 21)
-                        Map: Migration
-                    @elseif($item['map_type'] == 22)
-                        Map: Rivers      
-                    @elseif($item['map_type'] == 23)
-                        Map: Team Islands         
-                    @elseif($item['map_type'] == 24)
-                        Map: Full Random       
-                    @elseif($item['map_type'] == 25)
-                        Map: Scandinavia
-                    @elseif($item['map_type'] == 26)
-                        Map: Mongolia          
-                    @elseif($item['map_type'] == 27)
-                        Map: Yucatan  
-                    @elseif($item['map_type'] == 28)
-                        Map: Salt Marsh  
-                    @elseif($item['map_type'] == 29)
-                        Map: Arena  
-                    @elseif($item['map_type'] == 30)
-                        Map: Oasis  
-                    @elseif($item['map_type'] == 31)
-                        Map: Ghost Lake
-                    @elseif($item['map_type'] == 32)
-                        Map: Ghost Lake
-                    @elseif($item['map_type'] == 33)
-                        Map: Nomad
-                    @elseif($item['map_type'] == 49)
-                        Map: Iberia
-                    @elseif($item['map_type'] == 50)
-                        Map: Britain
-                    @elseif($item['map_type'] == 51)
-                        Map: Mideast
-                    @elseif($item['map_type'] == 52)
-                        Map: Texas
-                    @elseif($item['map_type'] == 53)
-                        Map: Italy
-                    @elseif($item['map_type'] == 54)
-                        Map: Central America
-                    @elseif($item['map_type'] == 55)
-                        Map: France
-                    @elseif($item['map_type'] == 56)
-                        Map: Norse Lands
-                    @elseif($item['map_type'] == 57)
-                        Map: Sea Of Japan 
-                    @elseif($item['map_type'] == 58)
-                        Map: Byzantium
-                    @elseif($item['map_type'] == 59)
-                        Map: Custom
-                    @elseif($item['map_type'] == 60)
-                        Map: Random Land Map
-                    @elseif($item['map_type'] == 62)
-                        Map: Random Real World Map
-                    @elseif($item['map_type'] == 63)
-                        Map: Blind Random
-                    @elseif($item['map_type'] == 65)
-                        Map: Random Special Map
-                    @elseif($item['map_type'] == 66)
-                        Map: Random Special Map
-                    @elseif($item['map_type'] == 67)
-                        Map: Acropolis
-                    @elseif($item['map_type'] == 68)
-                        Map: Budapest
-                    @elseif($item['map_type'] == 69)
-                        Map: Cenotes
-                    @elseif($item['map_type'] == 70)
-                        Map: City of Lakes
-                    @elseif($item['map_type'] == 71)
-                        Map: Golden Pit
-                    @elseif($item['map_type'] == 72)
-                        Map: Hideout
-                    @elseif($item['map_type'] == 73)
-                        Map: Hill Fort
-                    @elseif($item['map_type'] == 74)
-                        Map: Lombardia
-                    @elseif($item['map_type'] == 75)
-                        Map: Steppe
-                    @elseif($item['map_type'] == 76)
-                        Map: Valley
-                    @elseif($item['map_type'] == 77)
-                        Map: MegaRandom
-                    @elseif($item['map_type'] == 78)
-                        Map: Hamburger
-                    @elseif($item['map_type'] == 79)
-                        Map: CtR Random
-                    @elseif($item['map_type'] == 80)
-                        Map: CtR Monsoon
-                    @elseif($item['map_type'] == 81)
-                        Map: CtR Pyramid Descent
-                    @elseif($item['map_type'] == 82)
-                        Map: CtR Spiral
-                    @elseif($item['map_type'] == 83)
-                        Map: CtR Kilimanjaro
-                    @elseif($item['map_type'] == 84)
-                        Map: CtR Mountain Pass
-                    @elseif($item['map_type'] == 85)
-                        Map: Nile Delta
-                    @elseif($item['map_type'] == 86)
-                        Map: Serengeti
-                    @elseif($item['map_type'] == 87)
-                        Map: Socotra
-                    @elseif($item['map_type'] == 88)
-                        Map: Amazon
-                    @elseif($item['map_type'] == 89)
-                        Map: China
-                    @elseif($item['map_type'] == 90)
-                        Map: Horn of Africa
-                    @elseif($item['map_type'] == 91)
-                        Map: India
-                    @elseif($item['map_type'] == 92)
-                        Map: Madagascar
-                    @elseif($item['map_type'] == 93)
-                        Map: West Africa
-                    @elseif($item['map_type'] == 94)
-                        Map: Bohemia
-                    @endif
+                    
                 </p>
             </div>
         </div>
-    @endforeach
+   {{--  @endforeach --}}
 </div>
 
 @endsection

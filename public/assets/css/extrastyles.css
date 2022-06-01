@@ -2,3 +2,15 @@
     background-color: #f4f5f7;
     border-radius: 15px;
 }
+
+#label-lose {
+    color: red;
+}
+
+#label-won {
+    color: green;
+}
+
+#matches-history {
+    font-size: 100px;
+}
