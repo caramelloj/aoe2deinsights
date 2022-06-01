@@ -17,12 +17,10 @@
                 <th scope="col">Result(?</th>
                 <th scope="col">Civ</th>
                 <th scope="col">Rating</th>
-{{--                 <th scope="col">Enemy's civ</th>
-                <th scope="col">Rating's oponent</th>
-                <th scope="col">Nacionality</th>
-                <th scope="col">Name</th> --}}
+                {{-- <th scope="col">Nacionality</th> --}}
+                <th scope="col">Name</th>
                 <th scope="col">Map</th>
-{{--                 <th scope="col">Duration</th>
+                {{-- <th scope="col">Duration</th>
                 <th scope="col">Download rec</th>   --}}
             </tr>
         </thead>
@@ -37,8 +35,91 @@
                         @elseif($players['won'] == true)
                             <td style="color:green">Won</td>
                         @endif
-                        {{-- <td>{{ $players['won'] }}</td> --}}
-                        <td>{{ $players['civ'] }}</td>
+                        @if ($players['civ'] == 1)
+                            <td>Britons</td>
+                        @elseif($players['civ'] == 2)
+                            <td>Franks</td>
+                        @elseif($players['civ'] == 3)
+                            <td>Goths</td>
+                        @elseif($players['civ'] == 4)
+                            <td>Teutons</td>
+                        @elseif($players['civ'] == 5)
+                            <td>Japanese</td>
+                        @elseif($players['civ'] == 6)
+                            <td>Chinese</td>
+                        @elseif($players['civ'] == 7)
+                            <td>Byzantines</td>
+                        @elseif($players['civ'] == 8)
+                            <td>Persians</td>
+                        @elseif($players['civ'] == 9)
+                            <td>Saracens</td>
+                        @elseif($players['civ'] == 10)
+                            <td>Turks</td>
+                        @elseif($players['civ'] == 11)
+                            <td>Vikings</td>
+                        @elseif($players['civ'] == 12)
+                            <td>Mongols</td>
+                        @elseif($players['civ'] == 13)
+                            <td>Celts</td>
+                        @elseif($players['civ'] == 14)
+                            <td>Spanish</td>
+                        @elseif($players['civ'] == 15)
+                            <td>Aztecs</td>
+                        @elseif($players['civ'] == 16)
+                            <td>Mayans</td>
+                        @elseif($players['civ'] == 17)
+                            <td>Huns</td>
+                        @elseif($players['civ'] == 18)
+                            <td>Koreans</td>
+                        @elseif($players['civ'] == 19)
+                            <td>Italians</td>
+                        @elseif($players['civ'] == 20)
+                            <td>Hindustanis</td>
+                        @elseif($players['civ'] == 21)
+                            <td>Incas</td>
+                        @elseif($players['civ'] == 22)
+                            <td>Magyars</td>
+                        @elseif($players['civ'] == 23)
+                            <td>Slavs</td>
+                        @elseif($players['civ'] == 24)
+                            <td>Portuguese</td>
+                        @elseif($players['civ'] == 25)
+                            <td>Ethiopians</td>
+                        @elseif($players['civ'] == 26)
+                            <td>Malians</td>
+                        @elseif($players['civ'] == 27)
+                            <td>Berbers</td>
+                        @elseif($players['civ'] == 28)
+                            <td>Khmer</td>
+                        @elseif($players['civ'] == 29)
+                            <td>Malay</td>
+                        @elseif($players['civ'] == 30)
+                            <td>Burmese</td>
+                        @elseif($players['civ'] == 31)
+                            <td>Vietnamese</td>
+                        @elseif($players['civ'] == 32)
+                            <td>Bulgarians</td>
+                        @elseif($players['civ'] == 33)
+                            <td>Tatars</td>
+                        @elseif($players['civ'] == 34)
+                            <td>Cumans</td>
+                        @elseif($players['civ'] == 35)
+                            <td>Lithuanians</td>
+                        @elseif($players['civ'] == 36)
+                            <td>Burgundians</td>
+                        @elseif($players['civ'] == 37)
+                            <td>Sicilians</td>
+                        @elseif($players['civ'] == 38)
+                            <td>Poles</td>
+                        @elseif($players['civ'] == 39)
+                            <td>Bohemians</td>
+                        @elseif($players['civ'] == 40)
+                            <td>Dravidians</td>
+                        @elseif($players['civ'] == 41)
+                            <td>Bengalis</td>
+                        @elseif($players['civ'] == 42)
+                            <td>Gurjaras</td>
+                        @endif
                         <td>{{ $players['rating'] }}</td>
                         <td>{{ $players['name'] }}</td>
                         @if ($item['map_type'] == 9)
@@ -336,43 +417,6 @@
         </tbody>
         </table>
     </div>        
-        <div class="card">
-
-
-            <div class="card-header">
-                Game Number: {{$item["match_id"]}}  
-            </div>
-            <div class="card-body">
-                
-               {{--  {{ $all_players = count($players['profile_id'])}} --}}
-                {{ $players['profile_id']}}
-                {{ $players['name'] }}
-                {{ $players['country'] }}
-                {{ $players['won'] }}
-                {{ $players['civ'] }}
-                {{ $players['steam_id'] }}
-                {{ $players['rating'] }}
-
-{{--                 @if ( $all_players == 2)
-                    <b>1vs1</b>
-                @elseif($all_players == 4)
-                    <b>2vs2</b>
-                @elseif($all_players == 6)
-                    <b>3vs3</b>
-                @elseif($all_players == 8)
-                    <b>4vs4</b>
-                @else
-                    <b>Custom game</b>
-                @endif --}}
-{{--                     {{ $players['profile_id'] }}
-                    {{ $players[''] }} --}}
-                
-                <p>
-                    
-                </p>
-            </div>
-        </div>
-   {{--  @endforeach --}}
 </div>
 
 @endsection

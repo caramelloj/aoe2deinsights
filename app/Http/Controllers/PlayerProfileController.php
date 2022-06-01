@@ -15,7 +15,6 @@ class PlayerProfileController extends Controller
 
         $response1 = $response->json();
         
-        /* dd($response1[4]); */
 
         return view('pages-age.player', compact('response1'));
     }
