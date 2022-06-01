@@ -3,12 +3,40 @@
 @section('content')
 
 <div class="container">
+    
     @foreach ($response1 as $item)
         <div class="card">
+
+
             <div class="card-header">
-                Game Number: {{$item['match_id']}}
+                Game Number: {{$item["match_id"]}}  
             </div>
             <div class="card-body">
+                @foreach ($item["players"] as $players)
+                
+               {{--  {{ $all_players = count($players['profile_id'])}} --}}
+                {{ $players['profile_id']}}
+                {{ $players['name'] }}
+                {{ $players['country'] }}
+                {{ $players['won'] }}
+                {{ $players['civ'] }}
+                {{ $players['steam_id'] }}
+                {{ $players['rating'] }}
+
+{{--                 @if ( $all_players == 2)
+                    <b>1vs1</b>
+                @elseif($all_players == 4)
+                    <b>2vs2</b>
+                @elseif($all_players == 6)
+                    <b>3vs3</b>
+                @elseif($all_players == 8)
+                    <b>4vs4</b>
+                @else
+                    <b>Custom game</b>
+                @endif --}}
+{{--                     {{ $players['profile_id'] }}
+                    {{ $players[''] }} --}}
+                @endforeach
                 <p>
                     @if ($item['map_type'] == 9)
                         Map : Arabia
