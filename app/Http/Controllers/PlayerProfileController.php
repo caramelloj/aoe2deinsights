@@ -17,7 +17,7 @@ class PlayerProfileController extends Controller
         
         $response1 = collect($response1);
         
-        $response1 = $response1->paginate(2);
+        $response1 = $response1->paginate(8);
 
 
         return view('pages-age.player', compact('response1'));

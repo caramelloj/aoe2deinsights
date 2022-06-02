@@ -34,89 +34,173 @@
                         @endif
 
                         @if ($players['civ'] == 1)
-                            <td>Britons</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/britons.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 2)
-                            <td>Franks</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/franks.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 3)
-                            <td>Goths</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/goths.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 4)
-                            <td>Teutons</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/teutons.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 5)
-                            <td>Japanese</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/japanese.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 6)
-                            <td>Chinese</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/chinese.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 7)
-                            <td>Byzantines</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/byzantines.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 8)
-                            <td>Persians</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/persians.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 9)
-                            <td>Saracens</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/saracens.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 10)
-                            <td>Turks</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/turks.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 11)
-                            <td>Vikings</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/vikings.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 12)
-                            <td>Mongols</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/mongols.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 13)
-                            <td>Celts</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/celts.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 14)
-                            <td>Spanish</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/spanish.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 15)
-                            <td>Aztecs</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/aztecs.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 16)
-                            <td>Mayans</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/mayans.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 17)
-                            <td>Huns</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/huns.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 18)
-                            <td>Koreans</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/koreans.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 19)
-                            <td>Italians</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/italians.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 20)
-                            <td>Hindustanis</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/hindustanis.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 21)
-                            <td>Incas</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/incas.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 22)
-                            <td>Magyars</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/magyars.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 23)
-                            <td>Slavs</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/slavs.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 24)
-                            <td>Portuguese</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/portuguese.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 25)
-                            <td>Ethiopians</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/ethiopians.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 26)
-                            <td>Malians</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/malians.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 27)
-                            <td>Berbers</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/berbers.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 28)
-                            <td>Khmer</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/khmer.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 29)
-                            <td>Malay</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/malay.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 30)
-                            <td>Burmese</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/burmese.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 31)
-                            <td>Vietnamese</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/vietnamese.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 32)
-                            <td>Bulgarians</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/bulgarians.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 33)
-                            <td>Tatars</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/tatars.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 34)
-                            <td>Cumans</td>
+                            <td>
+                                <img src="{{ asset('assets') }}/img/civs/cumans.png" alt="">
+                            </td>
                         @elseif($players['civ'] == 35)
-                            <td>Lithuanians</td>
+                        <td>
+                            <img src="{{ asset('assets') }}/img/civs/lithuanians.png" alt="">
+                        </td>
                         @elseif($players['civ'] == 36)
-                            <td>Burgundians</td>
+                        <td>
+                            <img src="{{ asset('assets') }}/img/civs/burgundians.png" alt="">
+                        </td>
                         @elseif($players['civ'] == 37)
-                            <td>Sicilians</td>
+                        <td>
+                            <img src="{{ asset('assets') }}/img/civs/sicilians.png" alt="">
+                        </td>
                         @elseif($players['civ'] == 38)
-                            <td>Poles</td>
+                        <td>
+                            <img src="{{ asset('assets') }}/img/civs/poles.png" alt="">
+                        </td>
                         @elseif($players['civ'] == 39)
-                            <td>Bohemians</td>
+                        <td>
+                            <img src="{{ asset('assets') }}/img/civs/bohemians.png" alt="">
+                        </td>
                         @elseif($players['civ'] == 40)
-                            <td>Dravidians</td>
+                        <td>
+                            <img src="{{ asset('assets') }}/img/civs/dravidians.png" alt="">
+                        </td>
                         @elseif($players['civ'] == 41)
-                            <td>Bengalis</td>
+                        <td>
+                            <img src="{{ asset('assets') }}/img/civs/bengalis.png" alt="">
+                        </td>
                         @elseif($players['civ'] == 42)
-                            <td>Gurjaras</td>
+                        <td>
+                            <img src="{{ asset('assets') }}/img/civs/gurjaras.png" alt="">
+                        </td>
                         @else
                             <td></td>
                         @endif
