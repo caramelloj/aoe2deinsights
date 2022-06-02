@@ -28,7 +28,7 @@
 
         @yield('css')
     </head>
-    <body class="hidden" {{-- class="{{ $class ?? '' }}" --}}>
+    <body {{-- class="hidden" --}} class="{{ $class ?? '' }}">
         @auth()
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf

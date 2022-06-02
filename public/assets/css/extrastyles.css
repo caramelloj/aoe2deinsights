@@ -27,8 +27,7 @@
                 width: 25px;
             }
             /* Loader */
-            
-            .lds-roller {
+            /*             .lds-roller {
                 display: inline-block;
                 position: relative;
                 width: 80px;
@@ -130,4 +129,4 @@
                 100% {
                     transform: rotate(360deg);
                 }
-            }
+            } */
