@@ -211,6 +211,10 @@
                             <td>
                                 <img class="flags" src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/ar.svg" alt="ar">
                             </td>
+                        @elseif($players['country'] == 'AT')
+                            <td>
+                                <img class="flags" src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/at.svg" alt="at">
+                            </td>
                         @elseif($players['country'] == 'CN')
                             <td>
                                 <img class="flags" src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/cn.svg" alt="cn">
