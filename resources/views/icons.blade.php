@@ -48,7 +48,7 @@
                     <th scope="col">Rating</th>
                     <th scope="col">Name</th>
                     <th scope="col">Clan</th>
-                    <th scope="col">Country</th>
+                   {{--  <th scope="col">Country</th> --}}
                     <th scope="col">Streak</th>
                     <th scope="col">Games</th>
                     <th scope="col">Wins</th>
@@ -88,7 +88,7 @@
                     {data: 'rating'},
                     {data: 'name'},
                     {data: 'clan'},
-                    {data: 'country'},
+/*                     {data: 'country'}, */
                     {data: 'streak'},
                     {data: 'games'},
                     {data: 'wins'},
