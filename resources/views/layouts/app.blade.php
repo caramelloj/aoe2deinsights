@@ -27,7 +27,7 @@
 
         @yield('css')
     </head>
-    <body class="{{ $class ?? '' }}">
+    <body class="hidden" {{-- class="{{ $class ?? '' }}" --}}>
         @auth()
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
@@ -52,5 +52,9 @@
         
         <!-- Argon JS -->
         <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>
+
+        <script src="{{ asset('assets') }}/css/extrastyles.css"></script>
+
+        <script src="{{ asset('assets') }}/js/loader.js"></script>
     </body>
 </html>

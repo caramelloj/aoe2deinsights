@@ -2,14 +2,11 @@
 
 @section('css')
     <link type="text/css" href="{{ asset('assets') }}/css/extrastyles.css" rel="stylesheet">
-
 @endsection
+
 @section('content')
 
 <div class="container">
-    
-   {{--  @foreach ($response1 as $item) --}}
-
     <div class="table-responsive">
         <table id="matches-history" class="table align-items-center table-dark">
         <thead class="thead-dark">
@@ -17,8 +14,8 @@
                 <th scope="col">Result(?</th>
                 <th scope="col">Civ</th>
                 <th scope="col">Rating</th>
-                {{-- <th scope="col">Nacionality</th> --}}
                 <th scope="col">Name</th>
+                <th scope="col">Nacionality</th>
                 <th scope="col">Map</th>
                 {{-- <th scope="col">Duration</th>
                 <th scope="col">Download rec</th>   --}}
@@ -35,6 +32,7 @@
                         @elseif($players['won'] == true)
                             <td style="color:green">Won</td>
                         @endif
+
                         @if ($players['civ'] == 1)
                             <td>Britons</td>
                         @elseif($players['civ'] == 2)
@@ -119,9 +117,127 @@
                             <td>Bengalis</td>
                         @elseif($players['civ'] == 42)
                             <td>Gurjaras</td>
+                        @else
+                            <td></td>
                         @endif
                         <td>{{ $players['rating'] }}</td>
                         <td>{{ $players['name'] }}</td>
+
+                        @if ($players['country'] == 'AR')
+                            <td>
+                                <img class="flags" src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/ar.svg" alt="ar">
+                            </td>
+                        @elseif($players['country'] == 'CN')
+                            <td>
+                                <img class="flags" src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/cn.svg" alt="cn">
+                            </td>
+                        @elseif($players['country'] == 'ES')
+                            <td>
+                                <img class="flags" src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/es.svg" alt="es">
+                            </td>
+                        @elseif($players['country'] == 'DE')
+                            <td>
+                                <img class="flags" src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/de.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'TW')
+                            <td>
+                                <img class="flags" src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/tw.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'TR')
+                            <td>
+                                <img class="flags"  src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/tr.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'SE')
+                            <td>
+                                <img class="flags"  src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/se.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'IN')
+                            <td>
+                                <img class="flags"  src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/in.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'CA')
+                            <td>
+                                <img class="flags"  src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/ca.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'PL')
+                            <td>
+                                <img class="flags"  src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/pl.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'FI')
+                            <td>
+                                <img class="flags"  src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/fi.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'GB')
+                            <td>
+                                <img class="flags"  src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/gb.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'BR')
+                            <td>
+                                <img class="flags"  src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/br.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'PT')
+                            <td>
+                                <img class="flags"  src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/pt.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'DK')
+                            <td>
+                                <img class="flags"  src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/dk.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'RO')
+                            <td>
+                                <img class="flags"  src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/ro.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'MX')
+                            <td>
+                                <img class="flags"  src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/mx.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'KR')
+                            <td>
+                                <img class="flags"  src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/kr.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'US')
+                            <td>
+                                <img class="flags"  src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/us.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'VN')
+                            <td>
+                                <img class="flags"  src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/vn.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'SK')
+                            <td>
+                                <img class="flags"  src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/sk.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'RU')
+                            <td>
+                                <img class="flags"  src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/ru.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'NL')
+                            <td>
+                                <img class="flags"  src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/nl.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'PE')
+                            <td>
+                                <img class="flags" src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/pe.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'NO')
+                            <td>
+                                <img class="flags" src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/no.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'GR')
+                            <td>
+                                <img class="flags" src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/gr.svg" alt="">
+                            </td>
+                        @elseif($players['country'] == 'AU')
+                            <td>
+                                <img class="flags" src="https://aoe2.net/webjars/flag-icon-css/3.5.0/flags/4x3/au.svg" alt="">
+                            </td>
+                        @else
+                            <td>
+                                <img class="flags" src="https://adorerofblood.github.io/assets/flags/un.svg" alt="">
+                            </td>
+                        @endif
+
+
                         @if ($item['map_type'] == 9)
                             <td>Arabia </td>
                         @elseif($item['map_type'] == 10)
@@ -408,14 +524,18 @@
                             <td>Sacred Springs</td>
                         @elseif($item['map_type'] == 174)
                             <td>Wade</td>
+                        @else
+                                <td></td>
                         @endif
-                       
                     </tr>
                     @endforeach
                 @endforeach
-
         </tbody>
         </table>
+        <div class="d-flex justify-content-end">
+            {{  $response1->links()}}
+        </div>
+
     </div>        
 </div>
 
