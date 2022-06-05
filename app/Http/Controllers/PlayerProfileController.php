@@ -17,10 +17,23 @@ class PlayerProfileController extends Controller
         
         $response1 = collect($response1);
         
-        $response1 = $response1->paginate(8);
-
-
-        return view('pages-age.player', compact('response1'));
+        $matches_3 = [] ; // initiliaze an array to get 1vs1 matches_3
+        
+        foreach ($response1 as $item) {
+            
+            if ($item['leaderboard_id'] = 3) { // 3. leaderboard_id
+                if ($item['num_players'] != 2) {
+                    # code...
+                }else{
+                    array_push($matches_3, $item);
+                }
+            }
+        }
+        /* dd($matches_3[19]); */
+        $matches_3 = collect($matches_3)->paginate(8);
+        
+        /* dd($matches_3); */
+        return view('pages-age.player', compact('matches_3'));
     }
 
 }
