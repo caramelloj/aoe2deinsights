@@ -39,6 +39,7 @@
 
 <div class="row">
     <div class="container" id="onevsone">
+        <br>
         <div class="table-responsive">
             <table id="example" class="table align-items-center table-dark">
             <thead class="thead-dark">
@@ -48,7 +49,6 @@
                     <th scope="col">Rating</th>
                     <th scope="col">Name</th>
                     <th scope="col">Clan</th>
-                   {{--  <th scope="col">Country</th> --}}
                     <th scope="col">Streak</th>
                     <th scope="col">Games</th>
                     <th scope="col">Wins</th>
@@ -56,9 +56,7 @@
                     <th scope="col">Drops</th>
                 </tr>
             </thead>
-            
-        </table>
-        
+            </table>
         </div>
     </div>
 </div>

@@ -17,7 +17,7 @@ class PlayerProfileController extends Controller
         
         $response1 = collect($response1);
         
-        $matches_3 = [] ; // initiliaze an array to get 1vs1 matches_3
+        $matches_3 = [] ; // initiliaze an array to get 1vs1 ranked/unranked matches_3
         
         foreach ($response1 as $item) {
             
