@@ -23,7 +23,8 @@
         </svg>
     </div>
 </div>
-<div class="row">
+
+{{-- <div class="row">
     
     <div class="container">
         <div class="center" id="onload">
@@ -32,32 +33,56 @@
             </div>
         </div>
     </div>
-</div>
-
-
+</div> --}}
 
 
 <div class="row">
     <div class="container" id="onevsone">
-        <br>
-        <div class="table-responsive">
-            <table id="example" class="table align-items-center table-dark">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">Profile</th>
-                    <th scope="col">Rank</th>
-                    <th scope="col">Rating</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Clan</th>
-                    <th scope="col">Streak</th>
-                    <th scope="col">Games</th>
-                    <th scope="col">Wins</th>
-                    <th scope="col">Losses</th>
-                    <th scope="col">Drops</th>
-                </tr>
-            </thead>
-            </table>
+        <div>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">RM 1vs1</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">RM TG</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">EW</a>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="container">
+                                <br>
+                                <div class="table-responsive">
+                                    <table id="example" class="table align-items-center table-dark">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">Profile</th>
+                                            <th scope="col">Rank</th>
+                                            <th scope="col">Rating</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Clan</th>
+                                            <th scope="col">Streak</th>
+                                            <th scope="col">Games</th>
+                                            <th scope="col">Wins</th>
+                                            <th scope="col">Losses</th>
+                                            <th scope="col">Drops</th>
+                                        </tr>
+                                    </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">QUE ASCO ME DA FRAN_ARG</div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">CRIMINAL ASCAMBO</div>
+              </div>
         </div>
+        <br>
+
     </div>
 </div>
 

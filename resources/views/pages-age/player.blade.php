@@ -7,6 +7,7 @@
 @section('content')
 
 <div class="container">
+
     <div class="table-responsive">
         <table id="matches-history" class="table align-items-center table-dark">
         <thead class="thead-dark">
