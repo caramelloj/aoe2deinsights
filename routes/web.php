@@ -18,7 +18,12 @@ use App\Http\Controllers\PlayerProfileController;
 
 Route::get('/', function () {
     return view('icons');
-});
+})->name('index');
+
+Route::get('/about', function () {
+	return view('about');
+})->name('about');
+
 
 Route::get('datatable/players', 'App\Http\Controllers\ApiController@index')->name('datatable.versus');
 
@@ -27,7 +32,8 @@ Route::get('players/{id?}','App\Http\Controllers\PlayerProfileController@index' 
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+/* Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); */
+
 Auth::routes();
 
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');

@@ -24,17 +24,6 @@
     </div>
 </div>
 
-{{-- <div class="row">
-    
-    <div class="container">
-        <div class="center" id="onload">
-            <div id="loader">
-                <div class="lds-dual-ring">&nbsp</div>
-            </div>
-        </div>
-    </div>
-</div> --}}
-
 
 <div class="row">
     <div class="container" id="onevsone">

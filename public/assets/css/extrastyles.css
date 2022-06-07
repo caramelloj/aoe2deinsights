@@ -1,3 +1,11 @@
+#player-name {
+    color: white;
+}
+
+.player-card {
+    width: 13rem;
+}
+
 .vs {
     max-height: 40px;
     height: 40px;
