@@ -12,7 +12,7 @@
         <div class="header-body text-center mt-7 mb-7">
             <div class="row justify-content-center">
                 <div class="col-lg-5 col-md-6">
-                    <h1 class="text-white">{{ __('Aoe 2 Insights by n1ck_arg') }}</h1>
+                    <h1 class="text-white">{{ __('Aoe DE 2 Insights') }}</h1>
                 </div>
             </div>
         </div>

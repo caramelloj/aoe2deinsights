@@ -17,7 +17,7 @@ use App\Http\Controllers\PlayerProfileController;
 */
 
 Route::get('/', function () {
-    return view('icons');
+    return view('index');
 })->name('index');
 
 Route::get('/about', function () {
