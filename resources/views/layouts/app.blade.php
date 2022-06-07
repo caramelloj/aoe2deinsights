@@ -8,6 +8,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         
+        <title>{{ config('app.name', 'Aoe2 Insights') }}</title>
         <!-- Favicon -->
         <link href="{{ asset('assets') }}/img/brand/favicon.png" rel="icon" type="image/png">
         <!-- Fonts -->
