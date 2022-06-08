@@ -21,7 +21,7 @@ class PlayerProfileController extends Controller
         
         foreach ($response1 as $item) {
             
-            if ($item['leaderboard_id'] = 3) { // 3. leaderboard_id
+            if ($item['leaderboard_id'] == 3 && $item['rating_type']== 2) { // 3. leaderboard_id
                 if ($item['num_players'] != 2) {
                     # code...
                 }else{
@@ -29,7 +29,7 @@ class PlayerProfileController extends Controller
                 }
             }
         }
-        
+        dd($matches_3[0]);
         $profile_data = Http::get('https://aoe2.net/api/leaderboard?game=aoe2de&leaderboard_id=3&profile_id='.$profile_id);
 
         $profile_data = $profile_data->json();
